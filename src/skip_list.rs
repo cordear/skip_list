@@ -76,6 +76,9 @@ where
     pub fn len(&self) -> usize {
         return self.current_element;
     }
+    pub fn is_empty(&self) -> bool {
+        return self.current_element == 0;
+    }
     pub fn insert(&mut self, key: K, value: V) {
         let mut cur: NonNull<Node<K, V>> = (&(*self.head)).into();
         let mut update: Vec<NonNull<Node<K, V>>> = vec![NonNull::dangling(); self.max_level + 1];
